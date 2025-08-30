@@ -141,6 +141,9 @@ body {
 }
 
 @media (max-width: 550px) {
+    #root {
+        align-items: normal;
+    }
 
     .app {
         border-radius: 0;
