@@ -4,6 +4,7 @@ import Number from "./Number";
 export default function Main() {
     const [dices, setDices] = useState(() => randomDices());
     const [win, setWin] = useState(false);
+    const [wins, setWins] = useState(0);
 
     //console.log(dices)
 
@@ -13,6 +14,7 @@ export default function Main() {
         dices.every((dice) => dice.value === dices[0].value)
     ) {
         setWin(true);
+        setWins(prev => prev + 1)
     }
 
     function randomDices(prev) {
@@ -31,7 +33,7 @@ export default function Main() {
         } else {
             for (var i = 0; i < 12; i++) {
                 values.push({
-                    value: Math.floor((Math.random()) * 11),
+                    value: Math.floor(Math.random() * 11),
                     index: i,
                     active: false,
                 });
@@ -61,15 +63,16 @@ export default function Main() {
     }
 
     function newGame() {
-        setWin(false)
-        setDices(undefined)
-        setDices(randomDices)
+        setWin(false);
+        setDices(undefined);
+        setDices(randomDices);
     }
 
     return (
         <main className="app-main">
-            {win && alert("Felicidades Ganaste!!")}
+            {win && <p>Congratulations, you win!!!</p>}
             <div className="main-numbers">{setButtons()}</div>
+            <p>Games Won: {wins}</p>
             {win ? (
                 <button onClick={newGame} className="roll-button">
                     New Game
