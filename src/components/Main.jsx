@@ -16,7 +16,6 @@ export default function Main() {
     ) {
         setWin(true);
         setWins((prev) => prev + 1);
-        setRolls(0);
     }
 
     function randomDices(prev) {
@@ -67,6 +66,7 @@ export default function Main() {
 
     function newGame() {
         setWin(false);
+        setRolls(0);
         setDices(undefined);
         setDices(randomDices);
     }
