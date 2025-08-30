@@ -25,6 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     border-radius: 10px;
     width: fit-content;
@@ -104,6 +105,18 @@ body {
 .roll-button:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.scores {
+    display: flex;
+    gap: 20px;
+}
+
+.app-footer {
+    margin-top: 70px;
+    background-color: #aaa;
+    padding: 0 20px;
+    border-radius: 10px;
 }
 
 @media (max-width: 550px) {

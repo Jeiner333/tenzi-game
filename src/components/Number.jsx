@@ -13,7 +13,7 @@ export default function Number({ num, active, index, setActive }) {
     }
 
     if (actualState != active) {
-        setActualState(active)
+        setActualState(active);
         if (actualState == true) {
             setClassname("number-button");
         } else {
@@ -22,7 +22,6 @@ export default function Number({ num, active, index, setActive }) {
     }
 
     function changeState() {
-
         setActive((prev) => {
             return prev.map((dice) => {
                 if (dice.index == index) {

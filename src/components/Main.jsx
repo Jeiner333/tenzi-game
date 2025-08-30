@@ -5,6 +5,7 @@ export default function Main() {
     const [dices, setDices] = useState(() => randomDices());
     const [win, setWin] = useState(false);
     const [wins, setWins] = useState(0);
+    const [rolls, setRolls] = useState(0);
 
     //console.log(dices)
 
@@ -14,7 +15,8 @@ export default function Main() {
         dices.every((dice) => dice.value === dices[0].value)
     ) {
         setWin(true);
-        setWins(prev => prev + 1)
+        setWins((prev) => prev + 1);
+        setRolls(0);
     }
 
     function randomDices(prev) {
@@ -60,6 +62,7 @@ export default function Main() {
 
     function rollDices() {
         setDices((prev) => randomDices(prev));
+        setRolls((prev) => prev + 1);
     }
 
     function newGame() {
@@ -72,7 +75,11 @@ export default function Main() {
         <main className="app-main">
             {win && <p>Congratulations, you win!!!</p>}
             <div className="main-numbers">{setButtons()}</div>
-            <p>Games Won: {wins}</p>
+            <div className="scores">
+                <p>Games Won: {wins}</p>
+                <p>Rolls: {rolls}</p>
+            </div>
+
             {win ? (
                 <button onClick={newGame} className="roll-button">
                     New Game
