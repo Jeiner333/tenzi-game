@@ -1,6 +1,7 @@
 body {
-    width: 97dvw;
-    height: 97dvh;
+    margin: 0;
+    width: 100dvw;
+    height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +27,7 @@ body {
     justify-content: center;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: fit-content;
 }
 
 .app-header {
@@ -106,6 +107,14 @@ body {
 }
 
 @media (max-width: 550px) {
+    body {
+        overflow: hidden;
+    }
+
+    .app {
+        height: 100%;
+    }
+
     .main-numbers {
         grid-template-columns: 60px 60px 60px 60px;
         column-gap: 2px;
