@@ -29,6 +29,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: fit-content;
+    height: fit-content;
 }
 
 .app-header {
@@ -140,12 +141,10 @@ body {
 }
 
 @media (max-width: 550px) {
-    body {
-        overflow: hidden;
-    }
 
     .app {
-        height: 100%;
+        border-radius: 0;
+        min-height: fit-content;
     }
 
     .main-numbers {
