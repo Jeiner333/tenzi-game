@@ -140,6 +140,26 @@ body {
     gap: 10px;
 }
 
+.progress-barr {
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+    border: 2px solid #333;
+}
+
+.barr-color {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    border-radius: 20px;
+}
+
+.progress-barr > span {
+    position: relative;
+    bottom: 20px;
+    left: 210px;
+}
+
 @media (max-width: 550px) {
     #root {
         align-items: normal;
