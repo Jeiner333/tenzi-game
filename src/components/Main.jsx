@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Number from "./Number";
 import ProgressBarr from "./ProgressBarr";
 
@@ -42,6 +42,17 @@ export default function Main() {
 
     console.log(correctPorcent);
     //console.log(equalDices);
+
+    const [seconds, setSeconds] = useState(0);
+
+    useEffect(() => {
+        const cronometro = setInterval(() => {
+            setSeconds((prev) => prev + 1);
+            console.log(`Tiempo: ${seconds} segundos`);
+        }, 1000);
+
+        return () => clearInterval(cronometro);
+    }, []);
 
     function randomDices(prev) {
         var values = [];
@@ -94,6 +105,7 @@ export default function Main() {
         equalDices = 0;
         setWin(false);
         setRolls(0);
+        setSeconds(0);
         setDices(undefined);
         setDices(randomDices);
     }
@@ -101,11 +113,14 @@ export default function Main() {
     return (
         <main className="app-main">
             <ProgressBarr porcent={correctPorcent} />
-            {win && <p>Congratulations, you win!!!</p>}
+            {win && (
+                <p className="congrats-text">Congratulations, you win!!!</p>
+            )}
             <div className="main-numbers">{setButtons()}</div>
             <div className="scores">
                 <p>Games Won: {wins}</p>
                 <p>Rolls: {rolls}</p>
+                <p>Time: {seconds}s</p>
             </div>
 
             {win ? (
