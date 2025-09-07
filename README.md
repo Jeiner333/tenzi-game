@@ -1,2 +1,2 @@
 # tenzi-game
-Game of Tenzi, match all ten dice to win
+Game of Tenzi, match all twelve dice to win
