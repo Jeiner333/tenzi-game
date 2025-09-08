@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Number from "./Number";
 import ProgressBarr from "./ProgressBarr";
 
@@ -8,8 +8,8 @@ export default function Main() {
     const [win, setWin] = useState(false);
     const [wins, setWins] = useState(0);
     const [rolls, setRolls] = useState(0);
+    const intervaloRef = useRef(null);
 
-    var equalDices = 0;
     var correctPorcent = 0;
 
     //console.log(dices)
@@ -23,36 +23,39 @@ export default function Main() {
         setWins((prev) => prev + 1);
     }
 
-    var referenceDice = null;
+    const conteo = {};
+    let maxRepeticiones = 0;
     for (const dice of dices) {
-        if (!dice.active) {
-            continue;
-        }
-        if (equalDices === 0) {
-            referenceDice = dice.value;
-            equalDices++;
-        } else {
-            if (dice.value === referenceDice) {
-                equalDices++;
-            }
-        }
+        if (!dice.active) continue;
+        conteo[dice.value] = (conteo[dice.value] || 0) + 1;
     }
 
-    correctPorcent = Math.floor((equalDices * 100) / dicesNumber);
+    if (Object.keys(conteo).length > 0) {
+        maxRepeticiones = Math.max(...Object.values(conteo));
+    } else {
+        maxRepeticiones = 0; // ← Cuando no hay dados activos
+    }
 
-    console.log(correctPorcent);
+    const valorMasComun = Object.keys(conteo).find(
+        (key) => conteo[key] === maxRepeticiones
+    );
+
+    correctPorcent = Math.floor((maxRepeticiones * 100) / dicesNumber);
+
+    //console.log(correctPorcent);
     //console.log(equalDices);
 
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
-        const cronometro = setInterval(() => {
+        intervaloRef.current = setInterval(() => {
             setSeconds((prev) => prev + 1);
-            console.log(`Tiempo: ${seconds} segundos`);
         }, 1000);
 
-        return () => clearInterval(cronometro);
+        return () => clearInterval(intervaloRef.current); // Limpieza
     }, []);
+
+    //console.log(`Tiempo: ${seconds} segundos`);
 
     function randomDices(prev) {
         var values = [];
@@ -101,8 +104,7 @@ export default function Main() {
     }
 
     function newGame() {
-        referenceDice = null;
-        equalDices = 0;
+        maxRepeticiones = 0;
         setWin(false);
         setRolls(0);
         setSeconds(0);

@@ -101,11 +101,17 @@ body {
     background-color: darkslateblue;
     transition: transform 0.2s ease;
     max-width: fit-content;
+    border-bottom: 4px solid rgb(58, 49, 112);
 }
 
 .roll-button:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.roll-button:active {
+    border-bottom-width: 1px;
+    margin-top: 4px;
 }
 
 .scores {
