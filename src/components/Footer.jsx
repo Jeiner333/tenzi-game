@@ -5,7 +5,7 @@ export default function Footer() {
         <footer className="app-footer">
             <h3>By Miguelangel Dev. MIT Licence</h3>
             <div>
-                <a className="repo-link repo-div" href="https://github.com/Jeiner333/tenzi-game">
+                <a className="repo-link repo-div" href="https://github.com/Jeiner333/tenzi-game" target="_blank" >
                     <img
                         className="github-logo"
                         src={github_icon}

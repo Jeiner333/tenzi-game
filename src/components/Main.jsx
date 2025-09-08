@@ -33,7 +33,7 @@ export default function Main() {
     if (Object.keys(conteo).length > 0) {
         maxRepeticiones = Math.max(...Object.values(conteo));
     } else {
-        maxRepeticiones = 0; // ← Cuando no hay dados activos
+        maxRepeticiones = 0;
     }
 
     const valorMasComun = Object.keys(conteo).find(
