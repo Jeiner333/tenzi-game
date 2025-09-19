@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Number({ num, active, index, setActive }) {
+export default function Number({ num, active, index, setActive, isRolling }) {
     const [actualState, setActualState] = useState(active);
     const [classname, setClassname] = useState(setState());
 
@@ -32,7 +32,10 @@ export default function Number({ num, active, index, setActive }) {
     }
 
     return (
-        <button onClick={changeState} className={classname}>
+        <button 
+            onClick={changeState} 
+            className={`${classname} ${isRolling && !active ? 'rolling' : ''}`}
+        >
             {num}
         </button>
     );
