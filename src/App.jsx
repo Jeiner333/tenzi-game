@@ -15,13 +15,21 @@ export default function App() {
         setGameStarted(true);
     };
 
+    const handleReturnToMenu = () => {
+        setGameStarted(false);
+    };
+
     return (
         <main className="app">
             {!gameStarted ? (
                 <StartMenu onStartGame={handleStartGame} />
             ) : (
                 <>
-                    <Main diceCount={diceCount} gameMode={gameMode} />
+                    <Main 
+                        diceCount={diceCount} 
+                        gameMode={gameMode} 
+                        onReturnToMenu={handleReturnToMenu}
+                    />
                     <Footer />
                 </>
             )}

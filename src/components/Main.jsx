@@ -1,14 +1,47 @@
 import { useState, useEffect, useRef } from "react";
 import Number from "./Number";
 import ProgressBarr from "./ProgressBarr";
+import VictoryModal from "./VictoryModal";
 
-export default function Main({ diceCount = 12, gameMode = 'classic' }) {
+export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToMenu }) {
     const dicesNumber = diceCount;
+    
+    // localStorage utility functions
+    const getRecordsKey = () => {
+        return `tenziesRecords_${gameMode}_${diceCount}`;
+    };
+
+    const getWinsKey = () => {
+        return `tenziesWins_${gameMode}_${diceCount}`;
+    };
+
+    const loadWins = () => {
+        try {
+            const winsKey = getWinsKey();
+            const savedWins = localStorage.getItem(winsKey);
+            return savedWins ? parseInt(savedWins, 10) : 0;
+        } catch (error) {
+            console.error('Error loading wins:', error);
+            return 0;
+        }
+    };
+
+    const saveWins = (winsCount) => {
+        try {
+            const winsKey = getWinsKey();
+            localStorage.setItem(winsKey, winsCount.toString());
+        } catch (error) {
+            console.error('Error saving wins:', error);
+        }
+    };
+
     const [dices, setDices] = useState(() => randomDices());
     const [win, setWin] = useState(false);
-    const [wins, setWins] = useState(0);
+    const [wins, setWins] = useState(() => loadWins());
     const [rolls, setRolls] = useState(0);
     const [isRolling, setIsRolling] = useState(false);
+    const [showVictoryModal, setShowVictoryModal] = useState(false);
+    const [newRecords, setNewRecords] = useState({});
     const intervaloRef = useRef(null);
 
     // Records state
@@ -18,11 +51,6 @@ export default function Main({ diceCount = 12, gameMode = 'classic' }) {
         totalGames: 0
     });
     const [showRecords, setShowRecords] = useState(false);
-
-    // localStorage utility functions
-    const getRecordsKey = () => {
-        return `tenziesRecords_${gameMode}_${diceCount}`;
-    };
 
     const loadRecords = () => {
         try {
@@ -84,20 +112,39 @@ export default function Main({ diceCount = 12, gameMode = 'classic' }) {
         }
     };
 
-    if (checkWinCondition()) {
+    if (checkWinCondition() && !win) {
         setWin(true);
-        setWins((prev) => prev + 1);
         
-        // Update records
+        // Update wins and save to localStorage
+        setWins((prev) => {
+            const newWins = prev + 1;
+            saveWins(newWins);
+            return newWins;
+        });
+        
+        // Update records and track new records
         setRecords(prevRecords => {
             const newRecords = {
                 minSpins: prevRecords.minSpins === null ? rolls : Math.min(prevRecords.minSpins, rolls),
                 fastestTime: prevRecords.fastestTime === null ? seconds : Math.min(prevRecords.fastestTime, seconds),
                 totalGames: prevRecords.totalGames + 1
             };
+            
+            // Track which records are new
+            const newRecordFlags = {
+                minSpins: prevRecords.minSpins === null || rolls < prevRecords.minSpins,
+                fastestTime: prevRecords.fastestTime === null || seconds < prevRecords.fastestTime
+            };
+            setNewRecords(newRecordFlags);
+            
             saveRecords(newRecords);
             return newRecords;
         });
+        
+        // Show victory modal after a short delay
+        setTimeout(() => {
+            setShowVictoryModal(true);
+        }, 500);
     }
 
     // Calculate progress based on game mode
@@ -153,12 +200,16 @@ export default function Main({ diceCount = 12, gameMode = 'classic' }) {
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
-        intervaloRef.current = setInterval(() => {
-            setSeconds((prev) => prev + 1);
-        }, 1000);
+        if (!win) {
+            intervaloRef.current = setInterval(() => {
+                setSeconds((prev) => prev + 1);
+            }, 1000);
+        } else {
+            clearInterval(intervaloRef.current);
+        }
 
         return () => clearInterval(intervaloRef.current); // Limpieza
-    }, []);
+    }, [win]);
 
     //console.log(`Tiempo: ${seconds} segundos`);
 
@@ -221,11 +272,23 @@ export default function Main({ diceCount = 12, gameMode = 'classic' }) {
         setSeconds(0);
         setDices(undefined);
         setDices(randomDices);
+        setShowVictoryModal(false);
+        setNewRecords({});
+    }
+
+    function handleCloseVictoryModal() {
+        setShowVictoryModal(false);
     }
 
     return (
         <main className="app-main">
             <div className="top-controls">
+                <button 
+                    onClick={onReturnToMenu} 
+                    className="menu-button"
+                >
+                    ← Main Menu
+                </button>
                 <button 
                     onClick={() => setShowRecords(!showRecords)} 
                     className="records-toggle-button"
@@ -234,9 +297,6 @@ export default function Main({ diceCount = 12, gameMode = 'classic' }) {
                 </button>
             </div>
             <ProgressBarr porcent={correctPorcent} />
-            {win && (
-                <p className="congrats-text">Congratulations, you win!!!</p>
-            )}
             <div className="main-numbers">{setButtons()}</div>
             <div className="scores">
                 <p>Games Won: {wins}</p>
@@ -273,6 +333,21 @@ export default function Main({ diceCount = 12, gameMode = 'classic' }) {
                     Roll dices
                 </button>
             )}
+
+            {/* Victory Modal */}
+            <VictoryModal
+                isOpen={showVictoryModal}
+                onClose={handleCloseVictoryModal}
+                stats={{
+                    rolls: rolls,
+                    time: seconds,
+                    gamesWon: wins
+                }}
+                records={records}
+                newRecords={newRecords}
+                gameMode={gameMode}
+                diceCount={diceCount}
+            />
         </main>
     );
 }
