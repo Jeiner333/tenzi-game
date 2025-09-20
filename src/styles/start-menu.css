@@ -19,6 +19,7 @@
 
 .theme-selector-container {
     position: absolute;
+    display: flex;
     top: 20px;
     right: 20px;
     z-index: 10;
@@ -40,6 +41,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
+    margin-top: 1rem;
     text-shadow: none;
     letter-spacing: -1px;
     transition: var(--theme-transition);

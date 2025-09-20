@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useSound } from 'use-sound';
 
-export default function Number({ num, active, index, setActive, isRolling, diceSkin = 'numbers' }) {
+export default function Number({ num, active, index, setActive, isRolling, diceSkin = 'numbers', volume = 0.5 }) {
     const [actualState, setActualState] = useState(active);
     const [classname, setClassname] = useState(setState());
+
+    // Sound effect for freezing dice
+    const [playFreezeSound] = useSound('/freeze-sound.mp3', { volume });
 
     function setState() {
         if (actualState == false) {
@@ -29,6 +33,7 @@ export default function Number({ num, active, index, setActive, isRolling, diceS
                 } else return dice;
             });
         });
+        playFreezeSound();
     }
 
     function handleKeyDown(e) {

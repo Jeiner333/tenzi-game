@@ -356,7 +356,7 @@
 }
 
 .achievement-item.unlocked {
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    background: linear-gradient(135deg, #2bff00 0%, #6cff4e 100%);
     border-color: #ff6b6b;
     animation: achievement-glow 2s ease-in-out infinite alternate;
 }
@@ -373,7 +373,7 @@
 
 .achievement-name {
     font-weight: bold;
-    color: var(--color-text-primary);
+    color: #222;
     font-size: 18px;
     margin-bottom: 5px;
     transition: var(--theme-transition);
@@ -381,7 +381,7 @@
 
 .achievement-description {
     font-size: 15px;
-    color: var(--color-text-secondary);
+    color: #444;
     transition: var(--theme-transition);
 }
 

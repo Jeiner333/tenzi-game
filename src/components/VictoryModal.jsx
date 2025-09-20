@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react';
 import Confetti from 'react-confetti';
 import useSound from 'use-sound';
 
-export default function VictoryModal({ 
-    isOpen, 
-    onClose, 
-    stats, 
-    records, 
+export default function VictoryModal({
+    isOpen,
+    onClose,
+    stats,
+    records,
     newRecords,
-    gameMode, 
-    diceCount 
+    gameMode,
+    diceCount,
+    volume = 0.5
 }) {
     const [showConfetti, setShowConfetti] = useState(false);
     const [windowDimensions, setWindowDimensions] = useState({
@@ -18,8 +19,8 @@ export default function VictoryModal({
     });
 
     // Victory sound effect
-    const [playVictorySound] = useSound('/victory.mp3', { 
-        volume: 0.5,
+    const [playVictorySound] = useSound('/victory.mp3', {
+        volume: volume,
         onend: () => {
             // Optional: Add any cleanup after sound ends
         }

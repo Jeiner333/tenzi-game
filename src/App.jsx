@@ -18,6 +18,12 @@ export default function App() {
         return localStorage.getItem('tenzies-dice-skin') || 'numbers';
     });
 
+    const [volume, setVolume] = useState(() => {
+        // Load volume from localStorage or default to 0.5
+        const savedVolume = localStorage.getItem('tenzies-volume');
+        return savedVolume ? parseFloat(savedVolume) : 0.5;
+    });
+
     const handleStartGame = (selectedDiceCount, selectedGameMode) => {
         setDiceCount(selectedDiceCount);
         setGameMode(selectedGameMode);
@@ -38,6 +44,11 @@ export default function App() {
         localStorage.setItem('tenzies-dice-skin', newSkin);
     };
 
+    const changeVolume = (newVolume) => {
+        setVolume(newVolume);
+        localStorage.setItem('tenzies-volume', newVolume.toString());
+    };
+
     // Apply theme to document body
     useEffect(() => {
         // Remove all theme classes
@@ -53,6 +64,8 @@ export default function App() {
                     onStartGame={handleStartGame}
                     theme={theme}
                     onThemeChange={changeTheme}
+                    volume={volume}
+                    onVolumeChange={changeVolume}
                 />
             ) : (
                 <>
@@ -64,6 +77,7 @@ export default function App() {
                         onThemeChange={changeTheme}
                         diceSkin={diceSkin}
                         onDiceSkinChange={changeDiceSkin}
+                        volume={volume}
                     />
                     <Footer />
                 </>

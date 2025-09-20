@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useSound } from 'use-sound';
 import Number from "./Number";
 import ProgressBarr from "./ProgressBarr";
 import VictoryModal from "./VictoryModal";
@@ -6,7 +7,7 @@ import ThemeSelector from "./ThemeSelector";
 import DiceSkinSelector from "./DiceSkinSelector";
 import AchievementPanel from "./AchievementPanel";
 
-export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToMenu, theme, onThemeChange, diceSkin, onDiceSkinChange }) {
+export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToMenu, theme, onThemeChange, diceSkin, onDiceSkinChange, volume = 0.5 }) {
     const dicesNumber = diceCount;
     
     // localStorage utility functions
@@ -126,8 +127,27 @@ export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToM
     const [win, setWin] = useState(false);
     const [wins, setWins] = useState(() => loadWins());
     const [rolls, setRolls] = useState(0);
+    const [seconds, setSeconds] = useState(0);
+
+    useEffect(() => {
+        if (!win) {
+            intervaloRef.current = setInterval(() => {
+                setSeconds((prev) => prev + 1);
+            }, 1000);
+        } else {
+            clearInterval(intervaloRef.current);
+        }
+
+        return () => clearInterval(intervaloRef.current); // Limpieza
+    }, [win]);
+
+    //console.log(`Tiempo: ${seconds} segundos`);
+
     const [isRolling, setIsRolling] = useState(false);
     const [showVictoryModal, setShowVictoryModal] = useState(false);
+
+    // Sound effects
+    const [playRollSound] = useSound('/roll-sound.mp3', { volume });
     const [newRecords, setNewRecords] = useState({});
     const intervaloRef = useRef(null);
 
@@ -368,22 +388,6 @@ export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToM
     //console.log(correctPorcent);
     //console.log(equalDices);
 
-    const [seconds, setSeconds] = useState(0);
-
-    useEffect(() => {
-        if (!win) {
-            intervaloRef.current = setInterval(() => {
-                setSeconds((prev) => prev + 1);
-            }, 1000);
-        } else {
-            clearInterval(intervaloRef.current);
-        }
-
-        return () => clearInterval(intervaloRef.current); // Limpieza
-    }, [win]);
-
-    //console.log(`Tiempo: ${seconds} segundos`);
-
     function randomDices(prev) {
         var values = [];
 
@@ -422,6 +426,7 @@ export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToM
                     setActive={setDices}
                     isRolling={isRolling}
                     diceSkin={diceSkin}
+                    volume={volume}
                 />
             );
         });
@@ -430,6 +435,7 @@ export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToM
     function rollDices() {
         setIsRolling(true);
         setRolls((prev) => prev + 1);
+        playRollSound();
 
         // Delay the dice update to show animation
         setTimeout(() => {
@@ -589,6 +595,7 @@ export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToM
                 newRecords={newRecords}
                 gameMode={gameMode}
                 diceCount={diceCount}
+                volume={volume}
             />
         </main>
     );

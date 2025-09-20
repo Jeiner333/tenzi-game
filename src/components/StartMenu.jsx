@@ -1,8 +1,9 @@
 import { useState } from "react";
 import github_icon from "/public/assets/github-logo.png";
 import ThemeSelector from "./ThemeSelector";
+import VolumeSelector from "./VolumeSelector";
 
-export default function StartMenu({ onStartGame, theme, onThemeChange }) {
+export default function StartMenu({ onStartGame, theme, onThemeChange, volume, onVolumeChange }) {
     const [diceCount, setDiceCount] = useState(12);
     const [gameMode, setGameMode] = useState('classic');
 
@@ -14,6 +15,7 @@ export default function StartMenu({ onStartGame, theme, onThemeChange }) {
         <div className="start-menu">
             <div className="theme-selector-container">
                 <ThemeSelector theme={theme} onThemeChange={onThemeChange} />
+                <VolumeSelector volume={volume} onVolumeChange={onVolumeChange} />
             </div>
             <div className="start-menu-content">
                 <h1 className="game-title">Tenzies</h1>
