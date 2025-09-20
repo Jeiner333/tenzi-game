@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import Number from "./Number";
 import ProgressBarr from "./ProgressBarr";
 import VictoryModal from "./VictoryModal";
+import ThemeSelector from "./ThemeSelector";
+import DiceSkinSelector from "./DiceSkinSelector";
 
-export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToMenu }) {
+export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToMenu, theme, onThemeChange, diceSkin, onDiceSkinChange }) {
     const dicesNumber = diceCount;
     
     // localStorage utility functions
@@ -250,6 +252,7 @@ export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToM
                     index={index}
                     setActive={setDices}
                     isRolling={isRolling}
+                    diceSkin={diceSkin}
                 />
             );
         });
@@ -283,20 +286,25 @@ export default function Main({ diceCount = 12, gameMode = 'classic', onReturnToM
     return (
         <main className="app-main">
             <div className="top-controls">
-                <button 
-                    onClick={onReturnToMenu} 
+                <button
+                    onClick={onReturnToMenu}
                     className="menu-button"
                 >
                     ← Main Menu
                 </button>
-                <button 
-                    onClick={() => setShowRecords(!showRecords)} 
+                <button
+                    onClick={() => setShowRecords(!showRecords)}
                     className="records-toggle-button"
                 >
                     {showRecords ? 'Hide Records' : 'Show Records'}
                 </button>
+                <DiceSkinSelector diceSkin={diceSkin} onDiceSkinChange={onDiceSkinChange} />
+                <ThemeSelector theme={theme} onThemeChange={onThemeChange} />
             </div>
             <ProgressBarr porcent={correctPorcent} />
+            <div className="game-mode-display">
+                <p>Current Mode: <strong>{gameMode.charAt(0).toUpperCase() + gameMode.slice(1)}</strong></p>
+            </div>
             <div className="main-numbers">{setButtons()}</div>
             <div className="scores">
                 <p>Games Won: {wins}</p>

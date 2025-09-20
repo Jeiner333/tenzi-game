@@ -1,3 +1,189 @@
+:root {
+    /* Light Theme Variables (Default) */
+    --bg-body: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --bg-app: rgba(255, 255, 255, 0.95);
+    --bg-start-menu: rgba(255, 255, 255, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-button-secondary: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    --bg-button-active: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-progress: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-victory-modal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-victory-content: rgba(255, 255, 255, 1);
+    --bg-stats: rgba(255, 255, 255, 0.8);
+    --bg-records: rgba(255, 255, 255, 0.9);
+    --bg-record-item: rgba(255, 255, 255, 0.8);
+
+    --color-text-primary: #333;
+    --color-text-secondary: #555;
+    --color-text-light: #666;
+    --color-text-button: white;
+    --color-text-github: #666;
+    --color-text-record: #555;
+    --color-text-record-value: #667eea;
+
+    --color-border-primary: rgba(102, 126, 234, 0.2);
+    --color-border-secondary: #ccc;
+    --color-border-selected: darkslateblue;
+    --color-border-active: rgba(40, 167, 69, 0.5);
+
+    --color-shadow-primary: rgba(102, 126, 234, 0.3);
+    --color-shadow-secondary: rgba(108, 117, 125, 0.3);
+    --color-shadow-active: rgba(40, 167, 69, 0.4);
+    --color-shadow-app: rgba(0, 0, 0, 0.1);
+    --color-shadow-modal: rgba(0, 0, 0, 0.3);
+
+    --color-github-link: black;
+    --color-new-record: #28a745;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+
+    /* Transition duration for theme changes */
+    --theme-transition: all 0.3s ease;
+}
+
+/* Dark Theme */
+.theme-dark {
+    --bg-body: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    --bg-app: rgba(26, 26, 46, 0.95);
+    --bg-start-menu: rgba(26, 26, 46, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-button-secondary: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    --bg-button-active: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-progress: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-victory-modal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-victory-content: rgba(42, 42, 62, 1);
+    --bg-stats: rgba(42, 42, 62, 0.8);
+    --bg-records: rgba(42, 42, 62, 0.9);
+    --bg-record-item: rgba(42, 42, 62, 0.8);
+
+    /* Dark theme specific overrides for better visibility */
+    --bg-number-button: rgba(42, 42, 62, 0.9);
+    --bg-number-button-hover: rgba(52, 52, 72, 0.9);
+    --color-number-text: #e0e0e0;
+
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #b0b0b0;
+    --color-text-light: #a0a0a0;
+    --color-text-button: white;
+    --color-text-github: #a0a0a0;
+    --color-text-record: #b0b0b0;
+    --color-text-record-value: #667eea;
+
+    --color-border-primary: rgba(102, 126, 234, 0.3);
+    --color-border-secondary: #555;
+    --color-border-selected: #667eea;
+    --color-border-active: rgba(40, 167, 69, 0.6);
+
+    --color-shadow-primary: rgba(102, 126, 234, 0.4);
+    --color-shadow-secondary: rgba(108, 117, 125, 0.4);
+    --color-shadow-active: rgba(40, 167, 69, 0.5);
+    --color-shadow-app: rgba(0, 0, 0, 0.3);
+    --color-shadow-modal: rgba(0, 0, 0, 0.5);
+
+    --color-github-link: #e0e0e0;
+    --color-new-record: #28a745;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+}
+
+/* Blue Theme */
+.theme-blue {
+    --bg-body: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%);
+    --bg-app: rgba(187, 225, 250, 0.95);
+    --bg-start-menu: rgba(187, 225, 250, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    --bg-button-secondary: linear-gradient(135deg, #64748b 0%, #475569 100%);
+    --bg-button-active: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --bg-progress: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --bg-victory-modal: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    --bg-victory-content: rgba(240, 249, 255, 1);
+    --bg-stats: rgba(240, 249, 255, 0.8);
+    --bg-records: rgba(240, 249, 255, 0.9);
+    --bg-record-item: rgba(240, 249, 255, 0.8);
+
+    /* Blue theme specific overrides for better visibility */
+    --bg-number-button: rgba(240, 249, 255, 0.9);
+    --bg-number-button-hover: rgba(220, 235, 255, 0.9);
+    --color-number-text: #1e293b;
+
+    --color-text-primary: #1e293b;
+    --color-text-secondary: #475569;
+    --color-text-light: #64748b;
+    --color-text-button: white;
+    --color-text-github: #64748b;
+    --color-text-record: #475569;
+    --color-text-record-value: #1e3a8a;
+
+    --color-border-primary: rgba(30, 58, 138, 0.2);
+    --color-border-secondary: #cbd5e1;
+    --color-border-selected: #1e3a8a;
+    --color-border-active: rgba(5, 150, 105, 0.5);
+
+    --color-shadow-primary: rgba(30, 58, 138, 0.3);
+    --color-shadow-secondary: rgba(100, 116, 139, 0.3);
+    --color-shadow-active: rgba(5, 150, 105, 0.4);
+    --color-shadow-app: rgba(0, 0, 0, 0.1);
+    --color-shadow-modal: rgba(0, 0, 0, 0.3);
+
+    --color-github-link: #1e293b;
+    --color-new-record: #059669;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+}
+
+/* Green Theme */
+.theme-green {
+    --bg-body: linear-gradient(135deg, #0d4f3c 0%, #059669 50%, #a7f3d0 100%);
+    --bg-app: rgba(167, 243, 208, 0.95);
+    --bg-start-menu: rgba(167, 243, 208, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #047857 0%, #10b981 100%);
+    --bg-button-secondary: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    --bg-button-active: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    --bg-progress: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    --bg-victory-modal: linear-gradient(135deg, #047857 0%, #10b981 100%);
+    --bg-victory-content: rgba(236, 253, 245, 1);
+    --bg-stats: rgba(236, 253, 245, 0.8);
+    --bg-records: rgba(236, 253, 245, 0.9);
+    --bg-record-item: rgba(236, 253, 245, 0.8);
+
+    /* Green theme specific overrides for better visibility */
+    --bg-number-button: rgba(236, 253, 245, 0.9);
+    --bg-number-button-hover: rgba(220, 250, 235, 0.9);
+    --color-number-text: #14532d;
+
+    --color-text-primary: #14532d;
+    --color-text-secondary: #166534;
+    --color-text-light: #22c55e;
+    --color-text-button: white;
+    --color-text-github: #22c55e;
+    --color-text-record: #166534;
+    --color-text-record-value: #047857;
+
+    --color-border-primary: rgba(4, 120, 87, 0.2);
+    --color-border-secondary: #bbf7d0;
+    --color-border-selected: #047857;
+    --color-border-active: rgba(220, 38, 38, 0.5);
+
+    --color-shadow-primary: rgba(4, 120, 87, 0.3);
+    --color-shadow-secondary: rgba(107, 114, 128, 0.3);
+    --color-shadow-active: rgba(220, 38, 38, 0.4);
+    --color-shadow-app: rgba(0, 0, 0, 0.1);
+    --color-shadow-modal: rgba(0, 0, 0, 0.3);
+
+    --color-github-link: #14532d;
+    --color-new-record: #dc2626;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+}
+
 body {
     margin: 0;
     min-width: 100dvw;
@@ -9,9 +195,10 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background: var(--bg-body);
     background-attachment: fixed;
-    color: #333;
+    color: var(--color-text-primary);
+    transition: var(--theme-transition);
 }
 
 #root {
@@ -23,7 +210,7 @@ body {
 }
 
 .app {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-app);
     backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
@@ -33,13 +220,14 @@ body {
     border-radius: 24px;
     width: fit-content;
     height: fit-content;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px var(--color-shadow-app);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--theme-transition);
 }
 
 /* Start Menu Styles */
 .start-menu {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-start-menu);
     backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
@@ -52,6 +240,15 @@ body {
     min-width: 450px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--theme-transition);
+    position: relative;
+}
+
+.theme-selector-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
 }
 
 .start-menu-content {
@@ -65,21 +262,23 @@ body {
 .game-title {
     font-size: 52px;
     font-weight: 800;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--bg-button-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
     text-shadow: none;
     letter-spacing: -1px;
+    transition: var(--theme-transition);
 }
 
 .game-description {
     font-size: 18px;
-    color: #555;
+    color: var(--color-text-secondary);
     line-height: 1.6;
     max-width: 350px;
     margin: 0;
+    transition: var(--theme-transition);
 }
 
 .start-game-button {
@@ -87,27 +286,27 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
     border: none;
-    color: white;
+    color: var(--color-text-button);
     font-size: 24px;
     font-weight: 600;
     padding: 20px 40px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    transition: all 0.3s ease;
+    background: var(--bg-button-primary);
+    transition: var(--theme-transition);
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px var(--color-shadow-primary);
     position: relative;
     overflow: hidden;
 }
 
 .start-game-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 12px 35px var(--color-shadow-primary);
 }
 
 .start-game-button:active {
     transform: translateY(0);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 6px 20px var(--color-shadow-primary);
 }
 
 .github-section {
@@ -120,8 +319,9 @@ body {
 
 .github-section h3 {
     margin: 0;
-    color: #666;
+    color: var(--color-text-github);
     font-size: 16px;
+    transition: var(--theme-transition);
 }
 
 .dice-selection {
@@ -133,8 +333,9 @@ body {
 
 .dice-selection h3 {
     margin: 0;
-    color: #333;
+    color: var(--color-text-primary);
     font-size: 18px;
+    transition: var(--theme-transition);
 }
 
 .dice-options {
@@ -149,26 +350,27 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
-    border: 2px solid #ccc;
-    background-color: white;
-    color: #333;
+    border: 2px solid var(--color-border-secondary);
+    background-color: var(--bg-record-item, white);
+    color: var(--color-text-primary);
     font-size: 16px;
     font-weight: bold;
     padding: 12px 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: var(--theme-transition);
 }
 
 .dice-option:hover {
-    background-color: #f0f0f0;
-    border-color: #999;
+    background-color: var(--bg-record-item);
+    border-color: var(--color-border-secondary);
 }
 
 .dice-option.selected {
-    background-color: darkslateblue;
-    color: white;
-    border-color: darkslateblue;
+    background-color: var(--color-border-selected);
+    color: var(--color-text-button);
+    border-color: var(--color-border-selected);
+    transition: var(--theme-transition);
 }
 
 .game-mode-selection {
@@ -180,8 +382,9 @@ body {
 
 .game-mode-selection h3 {
     margin: 0;
-    color: #333;
+    color: var(--color-text-primary);
     font-size: 18px;
+    transition: var(--theme-transition);
 }
 
 .mode-options {
@@ -196,25 +399,26 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
-    border: 2px solid #ccc;
-    background-color: white;
-    color: #333;
+    border: 2px solid var(--color-border-secondary);
+    background-color: var(--bg-record-item, white);
+    color: var(--color-text-primary);
     padding: 15px;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: var(--theme-transition);
     text-align: left;
 }
 
 .mode-option:hover {
-    background-color: #f0f0f0;
-    border-color: #999;
+    background-color: var(--bg-record-item);
+    border-color: var(--color-border-secondary);
 }
 
 .mode-option.selected {
-    background-color: darkslateblue;
-    color: white;
-    border-color: darkslateblue;
+    background-color: var(--color-border-selected);
+    color: var(--color-text-button);
+    border-color: var(--color-border-selected);
+    transition: var(--theme-transition);
 }
 
 .mode-title {
@@ -262,14 +466,14 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
     border: none;
-    color: #667eea;
+    color: var(--color-text-record-value);
     font-size: 16px;
     font-weight: 500;
     padding: 12px 20px;
     border-radius: 12px;
     background: rgba(102, 126, 234, 0.1);
-    border: 2px solid rgba(102, 126, 234, 0.2);
-    transition: all 0.3s ease;
+    border: 2px solid var(--color-border-primary);
+    transition: var(--theme-transition);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -278,7 +482,7 @@ body {
 
 .menu-button:hover {
     background: rgba(102, 126, 234, 0.15);
-    border-color: rgba(102, 126, 234, 0.3);
+    border-color: var(--color-border-primary);
     transform: translateY(-1px);
 }
 
@@ -287,25 +491,25 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
     border: none;
-    color: white;
+    color: var(--color-text-button);
     font-size: 16px;
     font-weight: 500;
     padding: 12px 20px;
     border-radius: 12px;
-    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-    transition: all 0.3s ease;
+    background: var(--bg-button-secondary);
+    transition: var(--theme-transition);
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+    box-shadow: 0 4px 15px var(--color-shadow-secondary);
 }
 
 .records-toggle-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+    box-shadow: 0 6px 20px var(--color-shadow-secondary);
 }
 
 .records-toggle-button:active {
     transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(108, 117, 125, 0.3);
+    box-shadow: 0 3px 10px var(--color-shadow-secondary);
 }
 
 .main-numbers {
@@ -323,31 +527,33 @@ body {
     font-weight: 600;
     padding: 15px 0;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--bg-number-button, rgba(255, 255, 255, 0.9));
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(102, 126, 234, 0.2);
-    transition: all 0.3s ease;
+    border: 2px solid var(--color-border-primary);
+    transition: var(--theme-transition);
     max-height: fit-content;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--color-shadow-app);
     cursor: pointer;
+    color: var(--color-number-text, var(--color-text-primary));
 }
 
 .number-button:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px var(--color-shadow-primary);
+    border-color: var(--color-border-primary);
+    background: var(--bg-number-button-hover, rgba(245, 245, 245, 0.9));
 }
 
 .number-button:active {
     transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 4px 15px var(--color-shadow-primary);
 }
 
-.active {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    border-color: rgba(40, 167, 69, 0.5);
-    color: white;
-    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+.number-button.active {
+    background: var(--bg-button-active) !important;
+    border-color: var(--color-border-active) !important;
+    color: var(--color-text-button) !important;
+    box-shadow: 0 6px 20px var(--color-shadow-active) !important;
 }
 
 /* Dice rolling animation */
@@ -374,62 +580,66 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
     border: none;
-    color: white;
+    color: var(--color-text-button);
     font-size: 20px;
     font-weight: 600;
     padding: 18px 35px;
     border-radius: 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    transition: all 0.3s ease;
+    background: var(--bg-button-primary);
+    transition: var(--theme-transition);
     max-width: fit-content;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px var(--color-shadow-primary);
     cursor: pointer;
 }
 
 .roll-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 12px 35px var(--color-shadow-primary);
 }
 
 .roll-button:active {
     transform: translateY(0);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 6px 20px var(--color-shadow-primary);
 }
 
 .scores {
     display: flex;
     gap: 25px;
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--bg-stats);
     backdrop-filter: blur(10px);
     padding: 20px 30px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--color-shadow-app);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: var(--theme-transition);
 }
 
 .scores p {
     margin: 0;
     font-weight: 600;
-    color: #333;
+    color: var(--color-text-primary);
     font-size: 16px;
+    transition: var(--theme-transition);
 }
 
 .records {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--bg-records);
     backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     min-width: 350px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px var(--color-shadow-app);
+    transition: var(--theme-transition);
 }
 
 .records h3 {
     margin: 0 0 20px 0;
     text-align: center;
-    color: #333;
+    color: var(--color-text-primary);
     font-size: 20px;
     font-weight: 700;
+    transition: var(--theme-transition);
 }
 
 .records-grid {
@@ -443,21 +653,23 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--bg-record-item);
     border-radius: 12px;
-    border: 1px solid rgba(102, 126, 234, 0.2);
-    transition: all 0.2s ease;
+    border: 1px solid var(--color-border-primary);
+    transition: var(--theme-transition);
 }
 
 .record-label {
     font-weight: 600;
-    color: #555;
+    color: var(--color-text-record);
+    transition: var(--theme-transition);
 }
 
 .record-value {
     font-weight: 700;
-    color: #667eea;
+    color: var(--color-text-record-value);
     font-size: 16px;
+    transition: var(--theme-transition);
 }
 
 .app-footer {
@@ -474,8 +686,9 @@ body {
 }
 
 .repo-link {
-    color: black;
+    color: var(--color-github-link);
     text-decoration: none;
+    transition: var(--theme-transition);
 }
 
 .repo-div {
@@ -486,24 +699,228 @@ body {
     gap: 10px;
 }
 
+/* Theme Selector Styles */
+.theme-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-selector-button {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    border: 2px solid var(--color-border-primary);
+    background: var(--bg-stats);
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--theme-transition);
+    box-shadow: 0 2px 8px var(--color-shadow-app);
+}
+
+.theme-selector-button:hover {
+    border-color: var(--color-border-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--color-shadow-app);
+}
+
+.theme-color-preview {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-stats);
+    border: 2px solid var(--color-border-primary);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px var(--color-shadow-app);
+    z-index: 1000;
+    min-width: 140px;
+    margin-top: 4px;
+    backdrop-filter: blur(10px);
+    transition: var(--theme-transition);
+}
+
+.theme-option {
+    width: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    border: none;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--theme-transition);
+    text-align: left;
+}
+
+.theme-option:hover {
+    background: var(--bg-record-item);
+}
+
+.theme-option.active {
+    background: var(--bg-button-primary);
+    color: var(--color-text-button);
+}
+
+.checkmark {
+    margin-left: auto;
+    font-weight: bold;
+    color: var(--color-text-button);
+}
+
+.dropdown-arrow {
+    font-size: 12px;
+    margin-left: auto;
+}
+
+/* Dice Skin Selector Styles */
+.dice-skin-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.dice-skin-selector-button {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    border: 2px solid var(--color-border-primary);
+    background: var(--bg-stats);
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--theme-transition);
+    box-shadow: 0 2px 8px var(--color-shadow-app);
+}
+
+.dice-skin-selector-button:hover {
+    border-color: var(--color-border-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--color-shadow-app);
+}
+
+.skin-icon {
+    font-size: 16px;
+}
+
+.skin-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-stats);
+    border: 2px solid var(--color-border-primary);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px var(--color-shadow-app);
+    z-index: 1000;
+    min-width: 140px;
+    margin-top: 4px;
+    backdrop-filter: blur(10px);
+    transition: var(--theme-transition);
+}
+
+.skin-option {
+    width: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    border: none;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--theme-transition);
+    text-align: left;
+}
+
+.skin-option:hover {
+    background: var(--bg-record-item);
+}
+
+.skin-option.active {
+    background: var(--bg-button-primary);
+    color: var(--color-text-button);
+}
+
+/* Game Mode Display */
+.game-mode-display {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.game-mode-display p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    transition: var(--theme-transition);
+}
+
+/* Dice Dots */
+.dice-dots {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-number-text, var(--color-text-primary));
+    border-radius: 50%;
+    transition: var(--theme-transition);
+}
+
 .progress-barr {
     width: 100%;
     height: 24px;
     border-radius: 24px;
-    border: 2px solid rgba(102, 126, 234, 0.3);
+    border: 2px solid var(--color-border-primary);
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    transition: var(--theme-transition);
 }
 
 .barr-color {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    background: var(--bg-progress);
     border-radius: 24px;
     transition: width 0.3s ease;
-    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 2px 8px var(--color-shadow-active);
 }
 
 .progress-barr > span {
@@ -514,10 +931,11 @@ body {
 }
 
 .congrats-text {
-    background-color: #aaa;
+    background-color: var(--color-text-light);
     font-size: 30px;
     padding: 20px;
     border-radius: 20px;
+    transition: var(--theme-transition);
 }
 
 /* Victory Modal Styles */
@@ -536,23 +954,25 @@ body {
 }
 
 .victory-modal-container {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--bg-victory-modal);
     border-radius: 20px;
     padding: 30px;
     max-width: 500px;
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px var(--color-shadow-modal);
     animation: slideIn 0.4s ease-out;
     position: relative;
+    transition: var(--theme-transition);
 }
 
 .victory-modal-content {
-    background-color: white;
+    background-color: var(--bg-victory-content);
     border-radius: 15px;
     padding: 30px;
     text-align: center;
+    transition: var(--theme-transition);
 }
 
 .victory-header {
@@ -568,15 +988,17 @@ body {
 .victory-title {
     font-size: 36px;
     font-weight: bold;
-    color: #333;
+    color: var(--color-text-primary);
     margin: 0 0 10px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--theme-transition);
 }
 
 .victory-subtitle {
     font-size: 16px;
-    color: #666;
+    color: var(--color-text-light);
     margin: 0;
+    transition: var(--theme-transition);
 }
 
 .new-record-banner {
@@ -604,16 +1026,18 @@ body {
 .banner-title {
     font-size: 20px;
     font-weight: bold;
-    color: #d63384;
+    color: var(--color-banner-title);
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: var(--theme-transition);
 }
 
 .banner-subtitle {
     font-size: 14px;
-    color: #6f42c1;
+    color: var(--color-banner-subtitle);
     margin: 0;
     font-weight: 500;
+    transition: var(--theme-transition);
 }
 
 .victory-stats {
@@ -623,8 +1047,9 @@ body {
 .stats-title {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: var(--color-text-primary);
     margin: 0 0 20px 0;
+    transition: var(--theme-transition);
 }
 
 .stats-grid {
@@ -635,47 +1060,51 @@ body {
 }
 
 .stat-item {
-    background-color: #f8f9fa;
+    background-color: var(--bg-record-item, #f8f9fa);
     padding: 15px;
     border-radius: 10px;
-    border: 2px solid #e9ecef;
-    transition: transform 0.2s ease;
+    border: 2px solid var(--color-border-primary);
+    transition: var(--theme-transition);
 }
 
 .stat-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--color-shadow-app);
 }
 
 .stat-label {
     font-size: 14px;
-    color: #666;
+    color: var(--color-text-light);
     margin-bottom: 5px;
     font-weight: 500;
+    transition: var(--theme-transition);
 }
 
 .stat-value {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: var(--color-text-primary);
     position: relative;
+    transition: var(--theme-transition);
 }
 
 .stat-value.new-record {
-    color: #28a745;
+    color: var(--color-new-record);
+    transition: var(--theme-transition);
 }
 
 .record-badge {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #ff6b6b;
-    color: white;
+    background-color: var(--color-banner-border);
+    color: var(--color-text-button);
     font-size: 10px;
     padding: 2px 6px;
     border-radius: 10px;
     font-weight: bold;
     animation: pulse 1s ease-in-out infinite;
+    transition: var(--theme-transition);
 }
 
 .victory-records {
@@ -685,8 +1114,9 @@ body {
 .records-title {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: var(--color-text-primary);
     margin: 0 0 15px 0;
+    transition: var(--theme-transition);
 }
 
 .records-grid {
@@ -700,20 +1130,23 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    background-color: #f8f9fa;
+    background-color: var(--bg-record-item);
     border-radius: 8px;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--color-border-primary);
+    transition: var(--theme-transition);
 }
 
 .record-label {
     font-weight: 500;
-    color: #555;
+    color: var(--color-text-record);
+    transition: var(--theme-transition);
 }
 
 .record-value {
     font-weight: bold;
-    color: #2c5aa0;
+    color: var(--color-text-record-value);
     font-size: 16px;
+    transition: var(--theme-transition);
 }
 
 .victory-actions {
@@ -739,22 +1172,24 @@ body {
 }
 
 .victory-button.primary {
-    background-color: #28a745;
-    border-bottom: 4px solid #1e7e34;
+    background-color: var(--color-new-record);
+    border-bottom: 4px solid var(--color-new-record);
+    transition: var(--theme-transition);
 }
 
 .victory-button.primary:hover {
-    background-color: #218838;
+    background-color: var(--color-new-record);
     transform: scale(1.05);
 }
 
 .victory-button.secondary {
-    background-color: #6c757d;
-    border-bottom: 4px solid #545b62;
+    background-color: var(--color-text-light);
+    border-bottom: 4px solid var(--color-text-secondary);
+    transition: var(--theme-transition);
 }
 
 .victory-button.secondary:hover {
-    background-color: #5a6268;
+    background-color: var(--color-text-secondary);
     transform: scale(1.05);
 }
 
