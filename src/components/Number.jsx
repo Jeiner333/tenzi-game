@@ -31,6 +31,13 @@ export default function Number({ num, active, index, setActive, isRolling, diceS
         });
     }
 
+    function handleKeyDown(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            changeState();
+        }
+    }
+
     function renderDiceContent() {
         if (diceSkin === 'emojis') {
             const diceEmojis = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
@@ -74,7 +81,9 @@ export default function Number({ num, active, index, setActive, isRolling, diceS
     return (
         <button
             onClick={changeState}
+            onKeyDown={handleKeyDown}
             className={`${classname} ${isRolling && !active ? 'rolling' : ''}`}
+            aria-label={`Dice ${index + 1}, value ${num}, ${active ? 'frozen' : 'unfrozen'}`}
         >
             {renderDiceContent()}
         </button>

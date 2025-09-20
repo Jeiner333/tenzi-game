@@ -96,13 +96,19 @@ export default function VictoryModal({
 
             {/* Modal backdrop */}
             <div className="victory-modal-backdrop" onClick={onClose}>
-                <div className="victory-modal-container" onClick={(e) => e.stopPropagation()}>
+                <div
+                    className="victory-modal-container"
+                    onClick={(e) => e.stopPropagation()}
+                    role="dialog"
+                    aria-labelledby="victory-title"
+                    aria-describedby="victory-content"
+                >
                     {/* Modal content */}
-                    <div className="victory-modal-content">
+                    <div className="victory-modal-content" id="victory-content">
                         {/* Header with celebration */}
                         <div className="victory-header">
                             <div className="victory-icon">🎉</div>
-                            <h1 className="victory-title">Victory!</h1>
+                            <h1 className="victory-title" id="victory-title">Victory!</h1>
                             <div className="victory-subtitle">
                                 You completed {gameMode.charAt(0).toUpperCase() + gameMode.slice(1)} mode with {diceCount} dice!
                             </div>
@@ -176,10 +182,18 @@ export default function VictoryModal({
 
                         {/* Action buttons */}
                         <div className="victory-actions">
-                            <button className="victory-button primary" onClick={onClose}>
+                            <button
+                                className="victory-button primary"
+                                onClick={onClose}
+                                aria-label="Play again with same settings"
+                            >
                                 Play Again
                             </button>
-                            <button className="victory-button secondary" onClick={onClose}>
+                            <button
+                                className="victory-button secondary"
+                                onClick={onClose}
+                                aria-label="Close victory modal"
+                            >
                                 Close
                             </button>
                         </div>

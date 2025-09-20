@@ -1,0 +1,193 @@
+:root {
+    /* Light Theme Variables (Default) */
+    --bg-body: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --bg-app: rgba(255, 255, 255, 0.95);
+    --bg-start-menu: rgba(255, 255, 255, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-button-secondary: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    --bg-button-active: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-progress: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-progress-container: rgba(42, 42, 62, 0.8);
+    --color-progress-text: #e0e0e0;
+    --bg-victory-modal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-victory-content: rgba(255, 255, 255, 1);
+    --bg-stats: rgba(255, 255, 255, 0.8);
+    --bg-records: rgba(255, 255, 255, 0.9);
+    --bg-record-item: rgba(255, 255, 255, 0.8);
+
+    --color-text-primary: #333;
+    --color-text-secondary: #555;
+    --color-text-light: #666;
+    --color-text-button: white;
+    --color-text-github: #666;
+    --color-text-record: #555;
+    --color-text-record-value: #667eea;
+
+    --color-border-primary: rgba(102, 126, 234, 0.2);
+    --color-border-secondary: #ccc;
+    --color-border-selected: darkslateblue;
+    --color-border-active: rgba(40, 167, 69, 0.5);
+
+    --color-shadow-primary: rgba(102, 126, 234, 0.3);
+    --color-shadow-secondary: rgba(108, 117, 125, 0.3);
+    --color-shadow-active: rgba(40, 167, 69, 0.4);
+    --color-shadow-app: rgba(0, 0, 0, 0.1);
+    --color-shadow-modal: rgba(0, 0, 0, 0.3);
+
+    --color-github-link: black;
+    --color-new-record: #28a745;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+
+    /* Transition duration for theme changes */
+    --theme-transition: all 0.3s ease;
+}
+
+/* Dark Theme */
+.theme-dark {
+    --bg-body: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    --bg-app: rgba(26, 26, 46, 0.95);
+    --bg-start-menu: rgba(26, 26, 46, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-button-secondary: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    --bg-button-active: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-progress: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-progress-container: rgba(255, 255, 255, 0.8);
+    --color-progress-text: #333;
+    --bg-victory-modal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-victory-content: rgba(42, 42, 62, 1);
+    --bg-stats: rgba(42, 42, 62, 0.8);
+    --bg-records: rgba(42, 42, 62, 0.9);
+    --bg-record-item: rgba(42, 42, 62, 0.8);
+
+    /* Dark theme specific overrides for better visibility */
+    --bg-number-button: rgba(42, 42, 62, 0.9);
+    --bg-number-button-hover: rgba(52, 52, 72, 0.9);
+    --color-number-text: #e0e0e0;
+
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #b0b0b0;
+    --color-text-light: #a0a0a0;
+    --color-text-button: white;
+    --color-text-github: #a0a0a0;
+    --color-text-record: #b0b0b0;
+    --color-text-record-value: #667eea;
+
+    --color-border-primary: rgba(102, 126, 234, 0.3);
+    --color-border-secondary: #555;
+    --color-border-selected: #667eea;
+    --color-border-active: rgba(40, 167, 69, 0.6);
+
+    --color-shadow-primary: rgba(102, 126, 234, 0.4);
+    --color-shadow-secondary: rgba(108, 117, 125, 0.4);
+    --color-shadow-active: rgba(40, 167, 69, 0.5);
+    --color-shadow-app: rgba(0, 0, 0, 0.3);
+    --color-shadow-modal: rgba(0, 0, 0, 0.5);
+
+    --color-github-link: #e0e0e0;
+    --color-new-record: #28a745;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+}
+
+/* Blue Theme */
+.theme-blue {
+    --bg-body: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%);
+    --bg-app: rgba(187, 225, 250, 0.95);
+    --bg-start-menu: rgba(187, 225, 250, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    --bg-button-secondary: linear-gradient(135deg, #64748b 0%, #475569 100%);
+    --bg-button-active: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --bg-progress: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --bg-progress-container: rgba(240, 249, 255, 0.8);
+    --color-progress-text: #1e293b;
+    --bg-victory-modal: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    --bg-victory-content: rgba(240, 249, 255, 1);
+    --bg-stats: rgba(240, 249, 255, 0.8);
+    --bg-records: rgba(240, 249, 255, 0.9);
+    --bg-record-item: rgba(240, 249, 255, 0.8);
+
+    /* Blue theme specific overrides for better visibility */
+    --bg-number-button: rgba(240, 249, 255, 0.9);
+    --bg-number-button-hover: rgba(220, 235, 255, 0.9);
+    --color-number-text: #1e293b;
+
+    --color-text-primary: #1e293b;
+    --color-text-secondary: #475569;
+    --color-text-light: #64748b;
+    --color-text-button: white;
+    --color-text-github: #64748b;
+    --color-text-record: #475569;
+    --color-text-record-value: #1e3a8a;
+
+    --color-border-primary: rgba(30, 58, 138, 0.2);
+    --color-border-secondary: #cbd5e1;
+    --color-border-selected: #1e3a8a;
+    --color-border-active: rgba(5, 150, 105, 0.5);
+
+    --color-shadow-primary: rgba(30, 58, 138, 0.3);
+    --color-shadow-secondary: rgba(100, 116, 139, 0.3);
+    --color-shadow-active: rgba(5, 150, 105, 0.4);
+    --color-shadow-app: rgba(0, 0, 0, 0.1);
+    --color-shadow-modal: rgba(0, 0, 0, 0.3);
+
+    --color-github-link: #1e293b;
+    --color-new-record: #059669;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+}
+
+/* Green Theme */
+.theme-green {
+    --bg-body: linear-gradient(135deg, #0d4f3c 0%, #059669 50%, #a7f3d0 100%);
+    --bg-app: rgba(167, 243, 208, 0.95);
+    --bg-start-menu: rgba(167, 243, 208, 0.95);
+    --bg-button-primary: linear-gradient(135deg, #047857 0%, #10b981 100%);
+    --bg-button-secondary: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    --bg-button-active: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    --bg-progress: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    --bg-progress-container: rgba(236, 253, 245, 0.8);
+    --color-progress-text: #14532d;
+    --bg-victory-modal: linear-gradient(135deg, #047857 0%, #10b981 100%);
+    --bg-victory-content: rgba(236, 253, 245, 1);
+    --bg-stats: rgba(236, 253, 245, 0.8);
+    --bg-records: rgba(236, 253, 245, 0.9);
+    --bg-record-item: rgba(236, 253, 245, 0.8);
+
+    /* Green theme specific overrides for better visibility */
+    --bg-number-button: rgba(236, 253, 245, 0.9);
+    --bg-number-button-hover: rgba(220, 250, 235, 0.9);
+    --color-number-text: #14532d;
+
+    --color-text-primary: #14532d;
+    --color-text-secondary: #166534;
+    --color-text-light: #22c55e;
+    --color-text-button: white;
+    --color-text-github: #22c55e;
+    --color-text-record: #166534;
+    --color-text-record-value: #047857;
+
+    --color-border-primary: rgba(4, 120, 87, 0.2);
+    --color-border-secondary: #bbf7d0;
+    --color-border-selected: #047857;
+    --color-border-active: rgba(220, 38, 38, 0.5);
+
+    --color-shadow-primary: rgba(4, 120, 87, 0.3);
+    --color-shadow-secondary: rgba(107, 114, 128, 0.3);
+    --color-shadow-active: rgba(220, 38, 38, 0.4);
+    --color-shadow-app: rgba(0, 0, 0, 0.1);
+    --color-shadow-modal: rgba(0, 0, 0, 0.3);
+
+    --color-github-link: #14532d;
+    --color-new-record: #dc2626;
+    --color-banner-bg: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    --color-banner-border: #ff6b6b;
+    --color-banner-title: #d63384;
+    --color-banner-subtitle: #6f42c1;
+}

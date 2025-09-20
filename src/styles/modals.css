@@ -1,0 +1,401 @@
+/* Victory Modal Styles */
+.victory-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.victory-modal-container {
+    background: var(--bg-victory-modal);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px var(--color-shadow-modal);
+    animation: slideIn 0.4s ease-out;
+    position: relative;
+    transition: var(--theme-transition);
+}
+
+.victory-modal-content {
+    background-color: var(--bg-victory-content);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--theme-transition);
+}
+
+.victory-header {
+    margin-bottom: 30px;
+}
+
+.victory-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.victory-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--theme-transition);
+}
+
+.victory-subtitle {
+    font-size: 16px;
+    color: var(--color-text-light);
+    margin: 0;
+    transition: var(--theme-transition);
+}
+
+.new-record-banner {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    border: 3px solid #ff6b6b;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.banner-icon {
+    font-size: 30px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-banner-title);
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: var(--theme-transition);
+}
+
+.banner-subtitle {
+    font-size: 14px;
+    color: var(--color-banner-subtitle);
+    margin: 0;
+    font-weight: 500;
+    transition: var(--theme-transition);
+}
+
+.victory-stats {
+    margin-bottom: 25px;
+}
+
+.stats-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0 0 20px 0;
+    transition: var(--theme-transition);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background-color: var(--bg-record-item, #f8f9fa);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid var(--color-border-primary);
+    transition: var(--theme-transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--color-shadow-app);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+    font-weight: 500;
+    transition: var(--theme-transition);
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    position: relative;
+    transition: var(--theme-transition);
+}
+
+.stat-value.new-record {
+    color: var(--color-new-record);
+    transition: var(--theme-transition);
+}
+
+.record-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--color-banner-border);
+    color: var(--color-text-button);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    animation: pulse 1s ease-in-out infinite;
+    transition: var(--theme-transition);
+}
+
+.victory-records {
+    margin-bottom: 30px;
+}
+
+.records-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0 0 15px 0;
+    transition: var(--theme-transition);
+}
+
+.records-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.record-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--bg-record-item);
+    border-radius: 8px;
+    border: 1px solid var(--color-border-primary);
+    transition: var(--theme-transition);
+}
+
+.record-label {
+    font-weight: 500;
+    color: var(--color-text-record);
+    transition: var(--theme-transition);
+}
+
+.record-value {
+    font-weight: bold;
+    color: var(--color-text-record-value);
+    font-size: 16px;
+    transition: var(--theme-transition);
+}
+
+.victory-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.victory-button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.victory-button.primary {
+    background-color: var(--color-new-record);
+    border-bottom: 4px solid var(--color-new-record);
+    transition: var(--theme-transition);
+}
+
+.victory-button.primary:hover {
+    background-color: var(--color-new-record);
+    transform: scale(1.05);
+}
+
+.victory-button.secondary {
+    background-color: var(--color-text-light);
+    border-bottom: 4px solid var(--color-text-secondary);
+    transition: var(--theme-transition);
+}
+
+.victory-button.secondary:hover {
+    background-color: var(--color-text-secondary);
+    transform: scale(1.05);
+}
+
+.victory-button:active {
+    border-bottom-width: 1px;
+    margin-top: 3px;
+}
+
+/* Achievement Floating Window - Global Styles (responsive for all screens) */
+.achievements-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.achievements-container {
+    background: var(--bg-records);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    min-width: 320px;
+    max-width: 95vw;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px var(--color-shadow-modal);
+    position: relative;
+    transition: var(--theme-transition);
+    animation: slideIn 0.4s ease-out;
+    box-sizing: border-box;
+}
+
+.achievements-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    padding: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--theme-transition);
+}
+
+.achievements-close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.achievements h3 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: var(--color-text-primary);
+    font-size: 24px;
+    font-weight: 700;
+    transition: var(--theme-transition);
+}
+
+.no-achievements {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin: 20px 0;
+    transition: var(--theme-transition);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--bg-record-item);
+    border-radius: 12px;
+    border: 2px solid var(--color-border-primary);
+    transition: var(--theme-transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-item.unlocked {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    border-color: #ff6b6b;
+    animation: achievement-glow 2s ease-in-out infinite alternate;
+}
+
+.achievement-icon {
+    font-size: 35px;
+    margin-right: 20px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.achievement-content {
+    flex: 1;
+}
+
+.achievement-name {
+    font-weight: bold;
+    color: var(--color-text-primary);
+    font-size: 18px;
+    margin-bottom: 5px;
+    transition: var(--theme-transition);
+}
+
+.achievement-description {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    transition: var(--theme-transition);
+}
+
+.achievements-summary {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.achievements-summary p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 16px;
+    transition: var(--theme-transition);
+}
